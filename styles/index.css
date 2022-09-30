@@ -9,8 +9,8 @@
   --light: #E4E4E4;
   --white: #fcfcfc;
   --black: #050505;
-  --primary: #B1C3D3;
-  --primary-hover: #528ec2;
+  --primary: #56b7ec;
+  --primary-hover: #418cb5;
   --success: #6DE28E;
   --success-hover: #1e9b41;
   --danger: #df4848;
@@ -89,38 +89,47 @@ body {
 
 .bg.primary {
   background: var(--primary);
+  color: var(--black);
 }
 
 .bg.primary.button:hover, .bg.primary.reactive:hover {
   background: var(--primary-hover);
+  color: var(--white);
 }
 
 .bg.success {
   background: var(--success);
+  color: var(--black);
 }
 
 .bg.success.button:hover, .bg.success.reactive:hover {
   background: var(--success-hover);
+  color: var(--white);
 }
 
 .bg.danger {
   background: var(--danger);
+  color: var(--white);
 }
 
 .bg.danger.button:hover, .bg.danger.reactive:hover {
   background: var(--danger-hover);
+  color: var(--white);
 }
 
 .bg.dark {
   background: var(--dark);
+  color: var(--white);
 }
 
 .bg.dark.button:hover, .bg.dark.reactive:hover {
   background: var(--black);
+  color: var(--white);
 }
 
 .bg.light {
   background: var(--light);
+  color: var(--black);
 }
 
 .bg.light.button:hover, .bg.light.reactive:hover {
@@ -129,10 +138,12 @@ body {
 
 .bg.mid {
   background: var(--grey);
+  color: var(--white);
 }
 
 .bg.mid.button:hover, .bg.mid.reactive:hover {
   background: var(--mid-dark);
+  color: var(--white);
 }
 
 .flex {
@@ -292,7 +303,7 @@ body {
 }
 
 .toast {
-  width: 100%;
+  width: unset;
   padding: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -304,19 +315,258 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 4px;
+  border-radius: 2px;
 }
 
 .toast .title {
   font-size: 110%;
-  font-weight: 400;
+  font-weight: 500;
 }
 
-.toast.dismissable .cross {
+.toast.dismissible .cross {
   display: block;
 }
 
 .toast .cross {
+  cursor: pointer;
   display: none;
+}
+
+.toast .fluid {
+  width: 100%;
+  margin: 0;
+}
+
+.toast[data-position="top"] {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  margin-top: 0;
+}
+
+.toast[data-position="bottom"] {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 0;
+}
+
+.toast[data-visible=false] {
+  display: none;
+}
+
+.toast[data-visible=true] {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.button {
+  cursor: pointer;
+  color: inherit;
+  padding: 1%;
+  text-decoration: none;
+  font-family: var(--ft-condensed);
+  font-size: 120%;
+  font-weight: 500;
+  border-radius: 2px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  color: var(--black);
+  background-color: var(--primary);
+}
+
+.button:hover {
+  background-color: var(--primary-hover);
+  color: white;
+}
+
+.button.outlined {
+  padding: 1%;
+  background: transparent;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-box-shadow: 0px 0px 0px 3px var(--black) inset;
+  box-shadow: 0px 0px 0px 3px var(--black) inset;
+}
+
+.button.outlined.primary {
+  -webkit-box-shadow: 0px 0px 0px 3px var(--primary) inset;
+  box-shadow: 0px 0px 0px 3px var(--primary) inset;
+  color: var(--primary);
+}
+
+.button.outlined.success {
+  -webkit-box-shadow: 0px 0px 0px 3px var(--success) inset;
+  box-shadow: 0px 0px 0px 3px var(--success) inset;
+  color: var(--success);
+}
+
+.button.outlined.danger {
+  -webkit-box-shadow: 0px 0px 0px 3px var(--danger) inset;
+  box-shadow: 0px 0px 0px 3px var(--danger) inset;
+  color: var(--danger);
+}
+
+.button.outlined.dark {
+  -webkit-box-shadow: 0px 0px 0px 3px var(--dark) inset;
+  box-shadow: 0px 0px 0px 3px var(--dark) inset;
+  color: var(--dark);
+}
+
+.button.outlined.light {
+  -webkit-box-shadow: 0px 0px 0px 3px var(--light) inset;
+  box-shadow: 0px 0px 0px 3px var(--light) inset;
+  color: var(--light);
+}
+
+.button.outlined.mid {
+  -webkit-box-shadow: 0px 0px 0px 3px var(--grey) inset;
+  box-shadow: 0px 0px 0px 3px var(--grey) inset;
+  color: var(--grey);
+}
+
+.button.outlined:hover {
+  -webkit-box-shadow: 0px 0px 0px 3px var(--primary-hover) inset;
+  box-shadow: 0px 0px 0px 3px var(--primary-hover) inset;
+  color: var(--primary-hover);
+}
+
+.icon-button {
+  margin: 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: var(--primary);
+  color: black;
+  text-decoration: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-transition: all 100ms ease;
+  transition: all 100ms ease;
+}
+
+.icon-button:hover {
+  width: 150px;
+  -webkit-transition: all 100ms ease;
+  transition: all 100ms ease;
+  background-color: var(--hover);
+  color: white;
+}
+
+.icon-button .label {
+  font-family: var(--font-condensed);
+  font-size: 90%;
+  font-weight: 500;
+  -webkit-transition: all 100ms ease;
+  transition: all 100ms ease;
+}
+
+.icon-button:hover .label:before {
+  margin: 0 10px;
+  content: attr(data-label);
+  -webkit-transition: all 100ms ease;
+  transition: all 100ms ease;
+}
+
+@media screen and (max-width: 900px) {
+  .button {
+    padding: 2%;
+  }
+  .button.outlined {
+    padding: 3%;
+  }
+}
+
+@media screen and (min-width: 901px) {
+  .button.outlined {
+    background: -webkit-gradient(linear, left top, right top, color-stop(0, var(--primary-hover)), to(transparent));
+    background: linear-gradient(to right, var(--primary-hover) 0 calc(50%), transparent calc(50%) 100%);
+    background-size: 250% 100%;
+    background-position: 100% 50%;
+    -webkit-transition: 300ms all;
+    transition: 300ms all;
+  }
+  .button.outlined.dark {
+    background: -webkit-gradient(linear, left top, right top, color-stop(0, var(--black)), to(transparent));
+    background: linear-gradient(to right, var(--black) 0 calc(50%), transparent calc(50%) 100%);
+    background-size: 250% 100%;
+    background-position: 100% 50%;
+  }
+  .button.outlined.light {
+    background: -webkit-gradient(linear, left top, right top, color-stop(0, var(--white)), to(transparent));
+    background: linear-gradient(to right, var(--white) 0 calc(50%), transparent calc(50%) 100%);
+    background-size: 250% 100%;
+    background-position: 100% 50%;
+  }
+  .button.outlined.mid {
+    background: -webkit-gradient(linear, left top, right top, color-stop(0, var(--mid-dark)), to(transparent));
+    background: linear-gradient(to right, var(--mid-dark) 0 calc(50%), transparent calc(50%) 100%);
+    background-size: 250% 100%;
+    background-position: 100% 50%;
+  }
+  .button.outlined.success {
+    background: -webkit-gradient(linear, left top, right top, color-stop(0, var(--success-hover)), to(transparent));
+    background: linear-gradient(to right, var(--success-hover) 0 calc(50%), transparent calc(50%) 100%);
+    background-size: 250% 100%;
+    background-position: 100% 50%;
+  }
+  .button.outlined.danger {
+    background: -webkit-gradient(linear, left top, right top, color-stop(0, var(--danger-hover)), to(transparent));
+    background: linear-gradient(to right, var(--danger-hover) 0 calc(50%), transparent calc(50%) 100%);
+    background-size: 250% 100%;
+    background-position: 100% 50%;
+  }
+  .button.outlined.primary {
+    background: -webkit-gradient(linear, left top, right top, color-stop(0, var(--primary-hover)), to(transparent));
+    background: linear-gradient(to right, var(--primary-hover) 0 calc(50%), transparent calc(50%) 100%);
+    background-size: 250% 100%;
+    background-position: 100% 50%;
+  }
+  .button.outlined:hover {
+    color: var(--white);
+    background-position: 5% 50%;
+    -webkit-transition: 300ms all;
+    transition: 300ms all;
+    -webkit-box-shadow: 0px 0px 0px 3px var(--primary-hover) inset;
+    box-shadow: 0px 0px 0px 3px var(--primary-hover) inset;
+  }
+  .button.outlined:hover.dark {
+    -webkit-box-shadow: 0px 0px 0px 3px var(--black) inset;
+    box-shadow: 0px 0px 0px 3px var(--black) inset;
+  }
+  .button.outlined:hover.light {
+    -webkit-box-shadow: 0px 0px 0px 3px var(--white) inset;
+    box-shadow: 0px 0px 0px 3px var(--white) inset;
+    color: var(--black);
+  }
+  .button.outlined:hover.mid {
+    -webkit-box-shadow: 0px 0px 0px 3px var(--mid-dark) inset;
+    box-shadow: 0px 0px 0px 3px var(--mid-dark) inset;
+  }
+  .button.outlined:hover.success {
+    -webkit-box-shadow: 0px 0px 0px 3px var(--success-hover) inset;
+    box-shadow: 0px 0px 0px 3px var(--success-hover) inset;
+  }
+  .button.outlined:hover.danger {
+    -webkit-box-shadow: 0px 0px 0px 3px var(--danger-hover) inset;
+    box-shadow: 0px 0px 0px 3px var(--danger-hover) inset;
+  }
 }
 
 @media (prefers-reduced-motion) {
