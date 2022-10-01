@@ -465,7 +465,7 @@ body {
   width: 150px;
   -webkit-transition: all 100ms ease;
   transition: all 100ms ease;
-  background-color: var(--hover);
+  background-color: var(--primary-hover);
   color: white;
 }
 
