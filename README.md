@@ -17,6 +17,7 @@ https://kadamyash.github.io/uxd-portfolio
 - Requires jQuery for some components to work : https://jquery.com/download/
 - All embeds in root html
 - Primary Fonts - Barlow, Barlow Semi-Condensed (sans-serif, Google Fonts)
+- PLANNED - Audio/Video Player Custom UI & File Picker UI
 
 
 
